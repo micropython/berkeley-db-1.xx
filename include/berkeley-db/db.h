@@ -34,9 +34,28 @@
 #define	_DB_H_
 
 #include <sys/types.h>
-#include <sys/cdefs.h>
 
 #include <limits.h>
+
+#ifndef __P
+#define __P(args) args
+#endif
+
+#ifndef __BEGIN_DECLS
+#ifdef __cplusplus
+#define __BEGIN_DECLS extern "C" {
+#else
+#define __BEGIN_DECLS
+#endif
+#endif
+
+#ifndef __END_DECLS
+#ifdef __cplusplus
+#define __END_DECLS }
+#else
+#define __END_DECLS
+#endif
+#endif
 
 #include "berkeley-db/config.h"
 #include "berkeley-db/filevtable.h"
